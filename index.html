@@ -5,10 +5,9 @@
     <title>Giới thiệu THPT Hoàng Hoa Thám</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* GIỮ NGUYÊN CSS CŨ VÀ BỔ SUNG CSS CHO HEADER MỚI */
         body {font-family: Arial, sans-serif; margin: 0; background-color: #f4f6f8; color: #333;}
         
-        /* CSS CHO CODE 2 (HEADER MỚI) */
+        /* HEADER CSS */
         .top-header {display: flex; align-items: center; background: linear-gradient(to right, #1e90ff, #87cefa); padding: 15px 40px;}
         .logo img {width: 90px; border-radius: 50%;}
         .title {margin-left: 20px; color: white;}
@@ -18,17 +17,46 @@
         .menu a {color: white; text-decoration: none; margin-right: 20px; font-weight: bold; font-size: 14px;}
         .menu a:hover {text-decoration: underline;}
 
-        /* CSS CHO CONTENT VÀ FOOTER */
+        /* CONTENT CSS */
         .container {max-width: 1000px; margin: auto; padding: 20px;}
         section {background: white; padding: 20px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
         h2 {color: #003c8f; border-bottom: 2px solid #eee; padding-bottom: 10px;}
         .gallery img {width: 100%; border-radius: 6px; margin-top: 10px; display: block;}
         .video {text-align: center; margin-top: 15px;}
         .articles article {border-left: 5px solid #003c8f; padding-left: 15px; margin-bottom: 15px;}
-        footer {background-color: #002b66; color: white; text-align: center; padding: 15px; margin-top: 20px;}
+
+        /* FOOTER MỚI (ĐÃ CHỈNH SỬA TƯƠNG THÍCH) */
+        .main-footer {
+            background-color: #fce4ec; /* Màu hồng nhạt (pink) theo yêu cầu */
+            margin: 20px 0 0 0;
+            padding: 20px;
+            border-top: 4px solid #c0392b; /* Tạo điểm nhấn trùng màu menu */
+            color: #333;
+        }
+        .footer-info {
+            background-color: #ff5252; /* Màu đỏ theo ý Bảo Hân */
+            color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .thanks-section h1 {
+            color: #d81b60;
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+        .credit-box {
+            padding: 10px;
+            border: 2px solid #d81b60;
+            background-color: white;
+            display: inline-block;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+
 <div class="top-header">
     <div class="logo">
         <img src="1128185900782819538.jpg" alt="Logo">
@@ -48,50 +76,44 @@
     <a href="#">TUYỂN SINH 10</a>
     <a href="#">LIÊN HỆ</a>
 </div>
+
 <div class="container">
     <section id="gioithieu">
        <h2>1. Bài giới thiệu về trường</h2>
-        <p>Trường Trung học Phổ thông Hoàng Hoa Thám là cơ sở giáo dục có bề dày truyền thống, luôn chú trọng nâng cao chất lượng giảng dạy và giáo dục toàn diện cho học sinh...</p>
+        <p>Trường Trung học Phổ thông Hoàng Hoa Thám là cơ sở giáo dục có bề dày truyền thống...</p>
         <p>Với đội ngũ giáo viên giàu kinh nghiệm, tận tâm và sáng tạo...</p>
     </section>
 
     <section id="hinhanh">
        <h2>2. Hình ảnh hoạt động</h2>
         <div class="gallery">
-          <img src="https://hoanghoatham.edu.vn/wp-content/uploads/2023/06/34074854316422005062277756531180446763052206n.jpg" alt="Sân trường Hoàng Hoa Thám">
-          <img src="https://r73troypb4obj.vcdn.cloud/website02/uploads/images/622ab76e1a1b854d4e901810/lich-su-hinh-thanh-nha-truong-hoang-hoa-tham.jpg" alt="Học sinh tham gia hoạt động ngoại khóa">
-          <img src="https://jvs.vn/wp-content/uploads/2023/10/hoang-hoa-tham.jpg" alt="Toàn cảnh trường Hoàng Hoa Thám">
+          <img src="https://hoanghoatham.edu.vn/wp-content/uploads/2023/06/34074854316422005062277756531180446763052206n.jpg" alt="Sân trường">
+          <img src="https://r73troypb4obj.vcdn.cloud/website02/uploads/images/622ab76e1a1b854d4e901810/lich-su-hinh-thanh-nha-truong-hoang-hoa-tham.jpg" alt="Hoạt động">
         </div>
     </section>
 
     <section id="video">
        <h2>3. Video giới thiệu</h2>
         <div class="video">
-            <iframe width="950" height="360" src="https://www.youtube.com/embed/2gZFF_4wURI?si=DOGMM-xT2gUROtR7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section id="baiviet">
-       <h2>4. Các bài viết liên quan</h2>
-        <div class="articles">
-            <article>
-               <h3>Hoạt động ngoại khóa tiêu biểu</h3>
-                <p>Trường thường xuyên tổ chức các hoạt động ngoại khóa nhằm giúp học sinh phát triển kỹ năng mềm...</p>
-            </article>
-            <article>
-               <h3>Phong trào học tập và rèn luyện</h3>
-                <p>Phong trào thi đua học tốt – rèn luyện tốt luôn được đẩy mạnh...</p>
-            </article>
-            <article>
-               <h3>Định hướng tương lai cho học sinh</h3>
-                <p>Nhà trường chú trọng công tác hướng nghiệp, giúp học sinh định hướng đúng đắn.</p>
-            </article>
+            <iframe width="100%" height="450" src="https://www.youtube.com/embed/2gZFF_4wURI?si=DOGMM-xT2gUROtR7" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 </div>
 
-<footer>
-    <p>2026 Trường THPT Hoàng Hoa Thám</p>
+<footer class="main-footer">
+    <div class="footer-info">
+        <p><strong>Địa chỉ:</strong> 6 Hoàng Hoa Thám, phường 7, quận Bình Thạnh, TP.HCM</p>
+        <p><strong>Điện thoại:</strong> 028.5510574</p>
+    </div>
+
+    <div class="thanks-section">
+        <h1><strong>Lời cảm ơn</strong></h1>
+        <div class="credit-box">
+            Cre by Tổ 3
+        </div>
+    </div>
+    
+    <p style="text-align: center; margin-top: 20px; font-size: 12px; color: #888;">© 2026 Trường THPT Hoàng Hoa Thám</p>
 </footer>
 
 </body>
