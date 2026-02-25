@@ -5,30 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch Công Tác - THPT Hoàng Hoa Thám</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; color: #333; }
-        .img-container { text-align: center; margin-top: 20px; }
-        .img-document { max-width: 100%; height: auto; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #666; border-top: 1px solid #eee; padding-top: 20px; }
+        /* 1. ĐỊNH DẠNG CHUNG */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8fff9; /* Nền xanh lá cực nhẹ */
+        }
+
+        /* 2. PHẦN HEADER */
+        header {
+            background: linear-gradient(135deg, #10ac84, #1dd1a1); /* Xanh lá năng động */
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 { margin: 0; font-size: 1.4rem; letter-spacing: 1px; }
+
+        .btn-index {
+            text-decoration: none;
+            background: #ffffff;
+            color: #10ac84;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .btn-index:hover {
+            background: #f1f2f6;
+            transform: translateY(-2px);
+        }
+
+        /* 3. PHẦN CONTENT */
+        main {
+            flex: 1;
+            padding: 40px 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        h2 { 
+            color: #222; 
+            border-left: 6px solid #10ac84; 
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Khu vực tải file */
+        .download-section {
+            background: #f0fff4;
+            border: 1px dashed #10ac84;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .file-info { font-size: 0.95rem; color: #2d3436; }
+        .btn-docx {
+            text-decoration: none;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .btn-docx:hover { background: #27ae60; }
+
+        /* Hiển thị ảnh lịch công tác */
+        .image-viewer {
+            text-align: center;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        .img-document {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 4. PHẦN FOOTER */
+        footer {
+            background: #2d3436;
+            color: #dfe6e9;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
 
-  <section id="lichcongtac">
-    <h2>5. Lịch công tác tuần</h2>
-    <p>Dưới đây là bản kế hoạch công tác chi tiết của nhà trường:</p>
-    <div class="img-container">
-      <img src="IMG_1771952174848_1771979041375.jpg" 
-           alt="Lịch công tác THPT Hoàng Hoa Thám" 
-           class="img-document">
-    </div>
-  </section>
+    <header>
+        <h1>📅 LỊCH CÔNG TÁC</h1>
+        <a href="index.html" class="btn-index">🏠 Quay lại Trang chủ</a>
+    </header>
 
-  <footer>
-    <p>© 2026 Trường THPT Hoàng Hoa Thám - Chúc các bạn học tập tốt!</p>
-  </footer>
+    <main>
+        <div class="card">
+            <section id="lichcongtac">
+                <h2>5. Lịch công tác tuần chi tiết</h2>
+                <p style="color: #636e72;">Dưới đây là kế hoạch chi tiết của nhà trường. Bạn có thể xem trực tiếp hoặc tải file Word về để chỉnh sửa.</p>
+
+                <div class="download-section">
+                    <div class="file-info">
+                        <strong>Tài liệu:</strong> lct24_23220269.docx
+                    </div>
+                    <a href="lct24_23220269.docx" class="btn-docx">📥 Tải về file Word</a>
+                </div>
+
+                <div class="image-viewer">
+                    <img src="IMG_1771952174848_1771979041375.jpg" 
+                         alt="Lịch công tác THPT Hoàng Hoa Thám" 
+                         class="img-document">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Trường THPT Hoàng Hoa Thám - Chúc các bạn một tuần làm việc hiệu quả!</p>
+    </footer>
 
 </body>
 </html>
+
 
 
 
