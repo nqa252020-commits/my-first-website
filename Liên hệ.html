@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Liên Hệ</title>
+    <style>
+        /* Thiết lập cơ bản */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Nút Quay Lại */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: white;
+            background-color: #e74c3c;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-back:hover {
+            background-color: #c0392b;
+        }
+
+        /* Bố cục nội dung chính */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Phần Email bạn yêu cầu (đã được làm đẹp lại) */
+        .contact-box {
+            background-color: #e74c3c; /* Màu đỏ như yêu cầu */
+            color: white;
+            padding: 25px;
+            font-size: 22px;
+            border-radius: 8px;
+            margin-top: 30px;
+            word-wrap: break-word; /* Đảm bảo email dài không bị tràn */
+            transition: transform 0.2s;
+        }
+
+        .contact-box:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Trường THPT Hoàng Hoa Thám</div>
+        <a href="#" class="btn-back">← Quay lại</a>
+    </header>
+
+    <div class="container">
+        <h1>THÔNG TIN LIÊN HỆ</h1>
+        <p>Nếu bạn có bất kỳ thắc mắc nào, vui lòng liên hệ với chúng tôi qua địa chỉ email chính thức dưới đây:</p>
+        
+        <div class="contact-box">
+            <strong>Email:</strong> c3hoanghoatham.tphcm@moet.edu.vn
+        </div>
+
+        <footer>
+            &copy; 2026 Website Thông Tin Giáo Dục
+        </footer>
+    </div>
+
+</body>
+</html>
