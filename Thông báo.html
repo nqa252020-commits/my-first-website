@@ -1,39 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Báo - THPT Hoàng Hoa Thám</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #fdfdfd; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* HEADER & FOOTER tương tự các trang trước */
+        header { background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .btn-back { text-decoration: none; background: white; color: #d35400; padding: 8px 20px; border-radius: 25px; font-weight: bold; }
+        
+        main { flex: 1; padding: 40px 5%; max-width: 900px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+        
+        /* ĐỊNH DẠNG CÁC NHÃN TRẠNG THÁI */
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        /* Màu sắc cho từng trạng thái */
+        .status-upcoming { background-color: #fff3cd; color: #856404; } /* Sắp diễn ra - Vàng */
+        .status-ongoing { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; } /* Đang diễn ra - Xanh lá */
+        .status-expired { background-color: #f8d7da; color: #721c24; } /* Đã kết thúc - Đỏ */
+
+        article {
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        article:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        article h2 { margin: 0 0 10px 0; font-size: 1.1rem; color: #2c3e50; }
+        time { font-size: 0.85rem; color: #7f8c8d; }
+
+        footer { background: #2d3436; color: #bdc3c7; text-align: center; padding: 20px 0; }
+    </style>
 </head>
 <body>
-<h1>Thông báo</h1>
 
-<section>
-    <article>
-        <h2>
-            THÔNG BÁO về tiếp nhận thủ tục hành chính, thủ tục hành chính nội bộ thuộc phạm vi chức năng quản lý của Sở Giáo dục và Đào tạo Thành phố Hồ Chí Minh
-        </h2>
-        <time datetime="2026-01-12T15:31">12/1/2026 15:31</time>
-    </article>
+    <header>
+        <h1>📢 THÔNG BÁO HỆ THỐNG</h1>
+        <a href="index.html" class="btn-back">🏠 Trang Chủ</a>
+    </header>
 
-    <article>
-        <h2>Kế hoạch ứng phó bão KALMAEGI</h2>
-        <time datetime="2025-11-06T14:14">6/11/2025 14:14</time>
-    </article>
+    <main>
+        <section id="notification-list">
+            <article data-time="2026-03-01T08:00">
+                <div class="status-placeholder"></div>
+                <h2>Đại hội Đoàn trường nhiệm kỳ mới</h2>
+                <time>Thời gian: 01/03/2026 - 08:00</time>
+            </article>
 
-    <article>
-        <h2>Kế hoạch Tổ chức Lễ Kỷ niệm ngày Nhà giáo Việt Nam 20/11/2025</h2>
-        <time datetime="2025-11-04T13:04">4/11/2025 13:04</time>
-    </article>
-    <article>
-        <h2>: Thông báo về việc nhận sách giáo khoa năm học 2025-2026
-        </h2>
-        <time datetime="2026-08-06T15:16">6/8/2026 15:31</time>
-    </article>
+            <article data-time="2026-02-25T15:00">
+                <div class="status-placeholder"></div>
+                <h2>Họp hội đồng sư phạm tháng 2</h2>
+                <time>Thời gian: 25/02/2026 - 15:00</time>
+            </article>
 
-    <article>
-        <h2>Lịch bồi dưỡng các lớp STEM tháng 4/2025</h2>
-        <time datetime="2025-03-26T08:08">26/03/2025 14:14</time>
-    </article>
-</section>
+            <article data-time="2025-11-20T07:30">
+                <div class="status-placeholder"></div>
+                <h2>Lễ Kỷ niệm ngày Nhà giáo Việt Nam 20/11</h2>
+                <time>Thời gian: 20/11/2025 - 07:30</time>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Trường THPT Hoàng Hoa Thám</p>
+    </footer>
+
+    <script>
+        function updateStatus() {
+            const now = new Date(); // Lấy thời gian hiện tại
+            const articles = document.querySelectorAll('article');
+
+            articles.forEach(article => {
+                const eventTime = new Date(article.getAttribute('data-time'));
+                const statusDiv = article.querySelector('.status-placeholder');
+                
+                // Giả định: Một sự kiện được coi là "Đang diễn ra" trong vòng 2 tiếng kể từ lúc bắt đầu
+                const duration = 2 * 60 * 60 * 1000; 
+                const endTime = new Date(eventTime.getTime() + duration);
+
+                let statusHTML = '';
+
+                if (now < eventTime) {
+                    statusHTML = '<span class="status-badge status-upcoming">● Sắp diễn ra</span>';
+                } else if (now >= eventTime && now <= endTime) {
+                    statusHTML = '<span class="status-badge status-ongoing">● Đang diễn ra</span>';
+                } else {
+                    statusHTML = '<span class="status-badge status-expired">✓ Đã diễn ra</span>';
+                }
+
+                statusDiv.innerHTML = statusHTML;
+            });
+        }
+
+        // Chạy hàm khi trang web vừa load xong
+        window.onload = updateStatus;
+    </script>
 </body>
 </html>
-
