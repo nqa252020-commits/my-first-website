@@ -1,33 +1,132 @@
-<!DOCTYPE html>
+ html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thời Khóa Biểu - THPT Hoàng Hoa Thám</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; color: #333; }
-        .img-container { text-align: center; margin-top: 20px; }
-        .img-document { max-width: 100%; height: auto; border: 2px solid #3498db; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #666; border-top: 1px solid #eee; padding-top: 20px; }
+        /* 1. ĐỊNH DẠNG CHUNG */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Đảm bảo trang luôn cao bằng màn hình */
+            background-color: #f0f9ff;
+        }
+
+        /* 2. PHẦN HEADER - Tươi sáng & Năng động */
+        header {
+            background: linear-gradient(135deg, #00cec9, #0984e3); /* Màu xanh ngọc chuyển sang xanh dương */
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 { margin: 0; font-size: 1.4rem; letter-spacing: 1px; }
+        
+        /* Nút quay lại tại Header */
+        .btn-back-header {
+            text-decoration: none;
+            background: #ffffff;
+            color: #0984e3;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .btn-back-header:hover {
+            background: #dfe6e9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* 3. PHẦN CONTENT - Bố cục gọn gàng */
+        main {
+            flex: 1; /* Tự động giãn ra để đẩy footer xuống dưới */
+            padding: 40px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        h2 { 
+            color: #2d3436; 
+            font-size: 1.8rem;
+            border-left: 6px solid #00cec9;
+            padding-left: 15px;
+            margin-top: 0;
+        }
+        .desc { color: #636e72; margin-bottom: 25px; }
+
+        /* Khung PDF chuyên nghiệp */
+        .pdf-frame {
+            border: 2px solid #e1f5fe;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        iframe { 
+            width: 100%; 
+            height: 750px; /* Độ cao lý tưởng để xem PDF */
+            border: none;
+            display: block;
+        }
+
+        /* 4. PHẦN FOOTER - Trang trọng */
+        footer {
+            background: #2d3436;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
     </style>
 </head>
 <body>
 
-  <section id="thoikhoabieu">
-    <h2>6. Thời khóa biểu học tập</h2>
-    <p>Học sinh theo dõi thời khóa biểu học tập các khối lớp:</p>
-    <div class="img-container">
-      <img src="IMG_1771952086497_1771979039173.jpg" 
-           alt="Thời khóa biểu THPT Hoàng Hoa Thám" 
-           class="img-document">
-    </div>
-  </section>
+    <header>
+        <h1>THPT HOÀNG HOA THÁM</h1>
+        <a href="index.html" class="btn-back-header">🏠 Quay lại Trang chủ</a>
+    </header>
 
-  <footer>
-    <p>© 2026 Trường THPT Hoàng Hoa Thám - Chúc các bạn học tập tốt!</p>
-  </footer>
+    <main>
+        <div class="card">
+            <section id="thoikhoabieu">
+                <h2>📅 Thời Khóa Biểu Học Tập</h2>
+                <p class="desc">Bản cập nhật mới nhất cho học sinh các khối lớp. Bạn có thể xem trực tiếp hoặc sử dụng các công cụ trong khung PDF để phóng to/thu nhỏ.</p>
+                
+                <div class="pdf-frame">
+                    <iframe src="tkb-ap-dung-tu-02022026_301202610.pdf">
+                        Trình duyệt của bạn không hỗ trợ hiển thị PDF trực tiếp. 
+                        <a href="tkb-ap-dung-tu-02022026_301202610.pdf">Nhấn vào đây để tải file PDF</a>.
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Hệ thống Thông tin THPT Hoàng Hoa Thám | Thiết kế bởi Tổ 3</p>
+    </footer>
 
 </body>
 </html>
+
 
 
