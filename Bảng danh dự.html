@@ -1,31 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Danh Dự - THPT Hoàng Hoa Thám</title>
+    <style>
+        /* 1. ĐỊNH DẠNG CHUNG */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: radial-gradient(circle, #fffdf5 0%, #f7f1e3 100%);
+        }
+
+        /* 2. PHẦN HEADER - Đẳng cấp vinh danh */
+        header {
+            background: linear-gradient(135deg, #800000 0%, #b33939 100%);
+            color: #ffda79;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-bottom: 3px solid #d4af37;
+            position: sticky; top: 0; z-index: 1000;
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 1.8rem; 
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .btn-back {
+            text-decoration: none; 
+            background: linear-gradient(to bottom, #f1c40f, #d4af37);
+            color: #800000;
+            padding: 10px 25px; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            box-shadow: 0 4px 0 #84817a;
+            transition: all 0.2s ease;
+        }
+        .btn-back:hover { transform: translateY(2px); box-shadow: 0 2px 0 #84817a; color: black; }
+
+        /* 3. PHẦN CONTENT - GRID VINH DANH */
+        main {
+            flex: 1;
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            text-align: center;
+            color: #800000;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 900;
+            position: relative;
+        }
+        .main-title::after {
+            content: "🏆🏆🏆";
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .honor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 40px;
+        }
+
+        /* THẺ VINH DANH HÀO NHOÁNG */
+        .honor-card {
+            background: white;
+            border: 10px solid white;
+            outline: 2px solid #d4af37;
+            position: relative;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 
+                0 5px 15px rgba(0,0,0,0.1),
+                0 15px 35px rgba(212, 175, 55, 0.2); /* Đổ bóng màu vàng đồng */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .honor-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(128,0,0,0.3);
+            outline: 3px solid #800000;
+        }
+
+        /* Hiệu ứng dải ruy băng góc */
+        .honor-card::before {
+            content: "VINH DANH";
+            position: absolute;
+            top: 15px;
+            right: -10px;
+            background: #cd1818;
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 380px;
+            overflow-y: auto;
+            background: #f1f2f6;
+            border-bottom: 2px solid #d4af37;
+        }
+        .img-wrapper img { width: 100%; display: block; }
+
+        .card-body {
+            padding: 30px;
+            background: linear-gradient(to bottom, #ffffff 0%, #fff9e6 100%);
+            text-align: center;
+        }
+        .card-body h3 {
+            color: #800000;
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+        }
+        .card-body time {
+            color: #b8860b;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .card-body p {
+            font-style: italic;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* 4. PHẦN FOOTER */
+        footer {
+            background: #2c3e50;
+            color: #d4af37;
+            text-align: center;
+            padding: 30px 0;
+            border-top: 5px solid #800000;
+        }
+    </style>
 </head>
 <body>
-<article>
-    <img src="https://filethpt.hcm.edu.vn/UploadImages/news//2026/thpthoanghoatham/admin/2026_1/20/hs-dat-giai-may-tinh-nhanh-tphcm_2012026835.jpg?w=1130" 
-         alt="Danh sách học sinh đạt giải">
-    <div class="content">
-        <h2>Danh sách Học sinh đạt giải Kỳ thi giải toán trên máy tính cầm tay cấp Thành phố - Năm học 2025-2026</h2>
-        <time datetime="2026-01-20">20/01/2026 - 8:30</time>
-        <p> Trường THPT Hoàng Hoa Thám chúc mừng các em học sinh đã xuất sắc đạt giải trong kỳ thi học sinh giỏi cấp Thành phố.
-        </p>
-    </div>
-</article>
 
-<article>
-    <img src="https://filethpt.hcm.edu.vn/UploadImages/haydung/thpthoanghoatham/anhhaydung/admin2/anh-bang-danh-du-doi-du-tuyen-chinh-thuc-up-www_41020251135.jpg?w=1130" 
-         alt="Đội dự tuyển Học sinh giỏi">
-    <div class="content">
-        <h2>
-            Chúc mừng Quý Thầy/Cô đã phát hiện và bồi dưỡng Học sinh đậu vào Đội dự tuyển Học sinh giỏi Thành phố tham dự kỳ thi Học sinh giỏi Quốc gia Trung học phổ thông năm 2025
-        </h2>
-        <time datetime="2025-10-04">04/10/2025 - 11:09</time>
-        <p>Nhà trường trân trọng ghi nhận và biểu dương sự tận tâm của Quý Thầy/Cô trong công tác phát hiện, bồi dưỡng học sinh, góp phần nâng cao thành tích học sinh giỏi của trường.
-        </p>
-    </div>
-</article>
+    <header>
+        <h1>💎 BẢNG DANH DỰ</h1>
+        <a href="index.html" class="btn-back">🏠 VỀ TRANG CHỦ</a>
+    </header>
+
+    <main>
+        <div class="main-title">BẢNG VÀNG THÀNH TÍCH</div>
+
+        <div class="honor-grid">
+            <article class="honor-card">
+                <div class="img-wrapper">
+                    <img src="https://filethpt.hcm.edu.vn/UploadImages/news//2026/thpthoanghoatham/admin/2026_1/20/hs-dat-giai-may-tinh-nhanh-tphcm_2012026835.jpg?w=1130" alt="Học sinh đạt giải">
+                </div>
+                <div class="card-body">
+                    <time>📅 20 THÁNG 01, 2026</time>
+                    <h3>Giải toán trên máy tính cầm tay cấp Thành phố</h3>
+                    <p>"Thành công là kết quả của sự chuẩn bị kỹ lưỡng và nỗ lực không ngừng."</p>
+                </div>
+            </article>
+
+            <article class="honor-card">
+                <div class="img-wrapper">
+                    <img src="https://filethpt.hcm.edu.vn/UploadImages/haydung/thpthoanghoatham/anhhaydung/admin2/anh-bang-danh-du-doi-du-tuyen-chinh-thuc-up-www_41020251135.jpg?w=1130" alt="Đội tuyển HSG">
+                </div>
+                <div class="card-body">
+                    <time>📅 04 THÁNG 10, 2025</time>
+                    <h3>Đội dự tuyển Học sinh giỏi Quốc gia</h3>
+                    <p>"Nơi những tài năng tỏa sáng và vươn xa trên con đường tri thức."</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Trường THPT Hoàng Hoa Thám | Tự hào truyền thống - Vững bước tương lai</p>
+    </footer>
+
 </body>
 </html>
+
