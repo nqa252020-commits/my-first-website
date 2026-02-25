@@ -1,80 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<meta charset="utf-8">
-<title>Tuyển sinh 10</title>
-<style>   
-    body {font-family: Times new roman, sans-serif; margin: 0; background-color: #f4f6f8; color: #333;}
-  header {background-color: #003c8f; color: white; text-align: center; padding: 5px;}
-   .articles article {border-left: 5px solid #003c8f; padding-left: 15px; margin-bottom: 15px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thủ tục Chuyển Trường - THPT Hoàng Hoa Thám</title>
+    <style>
+        /* 1. ĐỊNH DẠNG CHUNG */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            margin: 0; padding: 0;
+            display: flex; flex-direction: column; min-height: 100vh;
+            background-color: #f0f7ff; color: #2d3436;
+        }
+
+        /* 2. HEADER - Tên chủ đề mới */
+        header {
+            background: linear-gradient(135deg, #0984e3, #6c5ce7);
+            color: white; padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        header h1 { margin: 0; font-size: 1.5rem; letter-spacing: 1px; text-transform: uppercase; }
+
+        .btn-back {
+            text-decoration: none; background: white; color: #0984e3;
+            padding: 8px 22px; border-radius: 30px; font-weight: bold; transition: 0.3s;
+        }
+        .btn-back:hover { background: #f1f2f6; transform: scale(1.05); }
+
+        /* 3. CONTENT - HỆ THỐNG RẼ NHÁNH CONG */
+        main { flex: 1; padding: 40px 5%; max-width: 850px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+        
+        .instruction-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h2.main-title { text-align: center; color: #0984e3; margin-bottom: 40px; font-size: 1.8rem; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+
+        /* Tách mục lớn thành ô riêng */
+        .major-node { margin-bottom: 25px; }
+
+        details {
+            background: #ffffff;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        details[open] { border-color: #0984e3; box-shadow: 0 5px 15px rgba(9, 132, 227, 0.1); }
+
+        summary {
+            padding: 20px; font-weight: bold; cursor: pointer;
+            display: flex; align-items: center; list-style: none;
+            font-size: 1.1rem; color: #2c3e50;
+        }
+        summary::-webkit-details-marker { display: none; }
+
+        /* Mũi tên tương tác */
+        summary::before {
+            content: '▶'; margin-right: 15px; font-size: 0.8rem;
+            transition: 0.3s; color: #0984e3;
+        }
+        details[open] > summary::before { transform: rotate(90deg); color: #e17055; }
+
+        /* PHẦN NHÁNH CONG */
+        .sub-steps {
+            padding: 10px 10px 20px 60px;
+            position: relative;
+        }
+
+        /* Nhánh dọc chính */
+        .sub-steps::before {
+            content: "";
+            position: absolute;
+            left: 35px; top: 0; bottom: 35px;
+            width: 2px; background: #74b9ff;
+        }
+
+        .step-item {
+            position: relative;
+            background: #f8fbff;
+            padding: 12px 18px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            border-left: 4px solid #0984e3;
+            color: #444;
+        }
+
+        /* Nhánh cong rẽ sang */
+        .step-item::after {
+            content: "";
+            position: absolute;
+            left: -27px; top: -10px;
+            width: 25px; height: 30px;
+            border-left: 2px solid #74b9ff;
+            border-bottom: 2px solid #74b9ff;
+            border-bottom-left-radius: 15px;
+        }
+
+        .note-highlight {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #d63031;
+            display: block;
+        }
+
+        /* 4. FOOTER */
+        footer {
+            background: #2d3436; color: #bdc3c7;
+            text-align: center; padding: 25px 0;
+        }
+    </style>
 </head>
-
 <body>
-<header>
-<h1>Chuyển trường (2025-2026)</h1>
-</header>
 
-<section>
-    <article>
-        <h2>
-            1. Hồ sơ chuyển trường cần có
-        </h2>
-        Theo hướng dẫn của Sở GD&ĐT TP.HCM từ năm học 2025–2026, bộ hồ sơ chuyển trường THPT trong nội thành thường gồm:
+    <header>
+        <h1>✈️ CHUYỂN TRƯỜNG</h1>
+        <a href="index.html" class="btn-back">🏠 Quay lại Trang chủ</a>
+    </header>
 
-<p> + Đơn xin chuyển trường </p>
+    <main>
+        <div class="instruction-card">
+            <h2 class="main-title">Quy trình Chuyển trường (2025-2026)</h2>
+            
+            <div class="tree-root">
+                <div class="major-node">
+                    <details>
+                        <summary>1. Hồ sơ chuyển trường cần chuẩn bị</summary>
+                        <div class="sub-steps">
+                            <div class="step-item">Đơn xin chuyển trường</div>
+                            <div class="step-item">Học bạ bản chính</div>
+                            <div class="step-item">Giấy giới thiệu từ trường đang học</div>
+                            <div class="step-item">Bản sao khai sinh & CCCD học sinh</div>
+                            <div class="step-item">Giấy tạm trú/hộ khẩu (nếu chuyển nơi ở)</div>
+                            <span class="note-highlight">=> Nộp tại trường cũ xin rút hồ sơ trước khi qua trường mới.</span>
+                        </div>
+                    </details>
+                </div>
 
-<p> + Học bạ bản chính</p>
+                <div class="major-node">
+                    <details>
+                        <summary>2. Thời gian xử lý hồ sơ</summary>
+                        <div class="sub-steps">
+                            <div class="step-item">Tại trường cũ: 3 – 7 ngày làm việc</div>
+                            <div class="step-item">Tại trường mới: 5 – 10 ngày làm việc</div>
+                            <span class="note-highlight">=> Lưu ý: Có thể lâu hơn nếu sát kỳ kiểm tra.</span>
+                        </div>
+                    </details>
+                </div>
 
-<p> + Giấy giới thiệu chuyển trường từ trường đang học</p>
+                <div class="major-node">
+                    <details>
+                        <summary>3. Xét duyệt và xếp lớp</summary>
+                        <div class="sub-steps">
+                            <div class="step-item">Xem xét học lực, hạnh kiểm & sự phù hợp chương trình</div>
+                            <div class="step-item">Khảo sát Toán – Văn – Anh (nếu cần thiết)</div>
+                            <div class="step-item">Việc xếp lớp do nhà trường quyết định hoàn toàn</div>
+                        </div>
+                    </details>
+                </div>
 
-<p> + Bản sao khai sinh</p>
+                <div class="major-node">
+                    <details>
+                        <summary>4. Tiêu chí quan trọng nhất</summary>
+                        <div class="sub-steps">
+                            <div class="step-item">Kết quả học tập học kỳ gần nhất</div>
+                            <div class="step-item">Hạnh kiểm (Ưu tiên loại Tốt/Khá)</div>
+                            <span class="note-highlight">⚠️ Cảnh báo: Điểm thấp hoặc hạnh kiểm chưa tốt sẽ giảm khả năng được nhận.</span>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<p> + CCCD của học sinh</p>
+    <footer>
+        <p>© 2026 Văn phòng Học vụ - Trường THPT Hoàng Hoa Thám</p>
+    </footer>
 
-<p>+Giấy tạm trú/hộ khẩu (nếu chuyển nơi ở)</p>
-
-<p>=> Nộp hồ sơ tại trường đang học trước để xin rút hồ sơ, rồi mới đem qua trường muốn chuyển đến.</p>
-    </article>
-
-    <article>
-        <h2>2.Thời gian xử lý hồ sơ</h2>
-  Thường mất:
-
-<p>+ 3–7 ngày ở trường cũ</p>
-
-<p>+ 5–10 ngày ở trường mới</p>
-
-=> Nếu sát kỳ kiểm tra là có thể kéo dài hơn.
-    </article>
-
-    <article>
-        <h2>3.Xét duyệt và xếp lớp</h2>
-
-<p> +Trường có thể xem học lực, hạnh kiểm và sự phù hợp chương trình. </p>
-
-<p> +Có khả năng yêu cầu làm bài khảo sát (Toán – Văn – Anh) nếu chuyển giữa năm hoặc từ chương trình khác.</p>
-
-<p> +Việc xếp lớp do nhà trường quyết định, không tự chọn lớp.</p>
-    </article>
-   
-   <article>
-        <h2>Học lực & hạnh kiểm gần nhất rất quan trọng</h2>
-
-Trường sẽ xem:
-
-<p>+Kết quả học tập học kỳ gần nhất
-
-<p>-Hạnh kiểm (Tốt/Khá/…)</p>
-
-<p>+Nếu:</p>
-
-<p>-Hạnh kiểm chưa tốt</p>
-
-<p>-Điểm trung bình thấp</p>
-
-<p>→ Khả năng được nhận sẽ giảm, nhất là khi sĩ số lớp đã gần đủ.</p>
-   </article>
-</section>
 </body>
 </html>
+
